@@ -11,6 +11,10 @@ class App extends Component {
 					<img src={logo} className="App-logo" alt="logo" />
 				</header>
 				<p className="App-intro">Click on the Following Tabs</p>
+				<div>
+					<span className="tab">Now Showing</span>
+					<span className="tab">Top Rated</span>
+				</div>
 			</div>
 		)
 	}
