@@ -15,7 +15,10 @@ class App extends Component {
 
 	onTabChange(event) {
 		const selectedType = event.target.getAttribute("data-type")
-		console.log("tab clicked ", selectedType)
+
+		this.setState({
+			selectedType, // No need of writing selectedType : selectedType // ES6 syntax
+		})
 	}
 
 	render() {
