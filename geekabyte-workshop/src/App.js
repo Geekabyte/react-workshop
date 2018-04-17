@@ -8,6 +8,7 @@ import axios from "axios"
 
 // API url config
 import { nowShowingUrl, topRatedUrl } from "./movie-island/apiConfig"
+import List from "./movie-island/List"
 
 class App extends Component {
 	constructor(props) {
@@ -15,6 +16,7 @@ class App extends Component {
 
 		// Bind events
 		this.onTabSelected = this.onTabSelected.bind(this)
+		this.state = {}
 	}
 
 	onTabSelected(selectedType) {
@@ -40,6 +42,8 @@ class App extends Component {
 	}
 
 	render() {
+		const { selectedType } = this.state
+		const { nowShowing, topRated } = this.state
 		return (
 			<div className="App">
 				<header className="App-header">
@@ -48,6 +52,8 @@ class App extends Component {
 				</header>
 				<p className="App-intro">Click on the Following Tabs</p>
 				<Tabbar onTabSelected={this.onTabSelected} />
+				{selectedType === "now_showing" && nowShowing && <List data={nowShowing} />}
+				{selectedType === "top_rated" && topRated && <List data={topRated} />}
 			</div>
 		)
 	}
