@@ -42,7 +42,14 @@ class Card extends Component {
 						<img src={starSVG} />
 						{data.vote_average}
 					</div>
-					<div className="card-desc">{data.overview}</div>
+					<div className="card-desc">
+						{data.overview.substr(0, showMore ? CHAR_LIMIT : data.overview.length)}
+						{data.overview.length > CHAR_LIMIT && (
+							<div className="show-more" onClick={this.onShowMoreClick}>
+								{showMore ? "Show more" : "Show less"}
+							</div>
+						)}
+					</div>
 					<div className="card-release">{data.release_data}</div>
 				</div>
 			</div>
