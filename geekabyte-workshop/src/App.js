@@ -8,6 +8,9 @@ class App extends Component {
 
 		// bind events
 		this.onTabChange = this.onTabChange.bind(this)
+
+		// initial state
+		this.state = {}
 	}
 
 	onTabChange(event) {
