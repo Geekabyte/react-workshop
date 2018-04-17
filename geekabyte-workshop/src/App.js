@@ -4,6 +4,10 @@ import "./App.css"
 
 // file imports
 import Tabbar from "./movie-island/Tabbar"
+import axios from "axios"
+
+// API url config
+import { nowShowingUrl, topRatedUrl } from "./movie-island/apiConfig"
 
 class App extends Component {
 	constructor(props) {
@@ -14,7 +18,9 @@ class App extends Component {
 	}
 
 	onTabSelected(selectedType) {
-		console.log("selected type ", selectedType)
+		// AJAX call to get the API response
+		axios.get(nowShowingUrl)
+		axios.get(topRatedUrl)
 	}
 
 	render() {
