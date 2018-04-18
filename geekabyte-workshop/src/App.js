@@ -10,6 +10,12 @@ import axios from "axios"
 import { nowShowingUrl, topRatedUrl } from "./movie-island/apiConfig"
 import List from "./movie-island/List"
 
+// Action Imports
+import { storeNowShowing, storeTopRated } from "./reducers/actions"
+
+// connect component to redux store
+import { connect } from "react-redux"
+
 class App extends Component {
 	constructor(props) {
 		super(props)
@@ -34,18 +40,12 @@ class App extends Component {
 		switch (selectedType) {
 			case "now_showing":
 				axios.get(nowShowingUrl).then(response => {
-					this.setState({
-						nowShowing: response.data.results,
-						selectedType,
-					})
+					this.props.dispatch(storeNowShowing(response.data.results))
 				})
 				break
 			case "top_rated":
 				axios.get(topRatedUrl).then(response => {
-					this.setState({
-						topRated: response.data.results,
-						selectedType,
-					})
+					this.props.dispatch(storeTopRated(response.data.results))
 				})
 				break
 		}
@@ -69,4 +69,4 @@ class App extends Component {
 	}
 }
 
-export default App
+export default connect()(App)
