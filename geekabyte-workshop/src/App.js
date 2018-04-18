@@ -32,6 +32,9 @@ class App extends Component {
 	}
 
 	onTabSelected(selectedType) {
+		this.setState({
+			selectedType,
+		})
 		this.fetchData(selectedType)
 	}
 
@@ -53,7 +56,7 @@ class App extends Component {
 
 	render() {
 		const { selectedType } = this.state
-		const { nowShowing, topRated } = this.state
+		const { nowShowing, topRated } = this.props
 		return (
 			<div className="App">
 				<header className="App-header">
@@ -69,4 +72,11 @@ class App extends Component {
 	}
 }
 
-export default connect()(App)
+function mapStateToProps(state) {
+	return {
+		nowShowing: state.movies.nowShowing,
+		topRated: state.movies.topRated,
+	}
+}
+
+export default connect(mapStateToProps)(App)
