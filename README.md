@@ -95,3 +95,4 @@ we will use the following command
 git subtree push --prefix geekabyte-workshop heroku master
  ```
 
+You should see your app deployed like [this]((https://gb-react.herokuapp.com/)
