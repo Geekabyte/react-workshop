@@ -1,7 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import "./index.css"
-import App from "./App"
 import registerServiceWorker from "./registerServiceWorker"
 
 // Redux store imports
@@ -9,6 +8,7 @@ import { createStore, applyMiddleware, compose } from "redux"
 import { Provider } from "react-redux"
 
 import rootReducer from "./reducers"
+import AppRouter from "./router"
 
 // Configure store
 // DEV extension tool configuration download extension from
@@ -21,7 +21,7 @@ const store = compose(applyMiddleware())(createStore)(
 // Render the DOM
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<AppRouter />
 	</Provider>,
 	document.getElementById("root")
 )
