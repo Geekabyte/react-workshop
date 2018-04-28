@@ -1,10 +1,22 @@
 React workshop includes step by step guide to create your very own first react application.
 
+## What do you need for the Environment?
+- [Node.js](https://nodejs.org/)
+- [yarn](https://yarnpkg.com/lang/en/docs/install/) or [npm](https://www.npmjs.com/)
+
 ## Setting up your application 
 
-### `bash start.sh` 
+### Creating from Scartch
+ - Clone the repo on your machine
+ - Switch to byte-1 branch: `git checkout byte-1`
+ - `bash start.sh` : This command helps you to setup your [CRA(Create React App)](https://github.com/facebook/create-react-app) environment to begin with your development.
 
-The above command helps you to setup your CRA environment to begin with your development.
+### Checking Final Code
+
+- Clone the repo on your machine
+- Go to the root of the project folder execute either `yarn` or `npm install` to install all the dependencies modules for the project
+
+### 
 
 ## Folder Structure
 
