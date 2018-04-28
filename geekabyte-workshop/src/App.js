@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import logo from "./logo.svg"
+import { Link } from 'react-router-dom'
 import "./App.css"
 
 // file imports
@@ -62,6 +63,9 @@ class App extends Component {
 				<header className="App-header">
 					<h1 className="App-title">Welcome to Movie-island</h1>
 					<img src={logo} className="App-logo" alt="logo" />
+					<Link to="/">Home </Link>
+					<Link to="/about">About </Link>
+					<Link to="/contact-us">Contact Us </Link>
 				</header>
 				<p className="App-intro">Click on the Following Tabs</p>
 				<Tabbar onTabSelected={this.onTabSelected} selectedType={selectedType} />
